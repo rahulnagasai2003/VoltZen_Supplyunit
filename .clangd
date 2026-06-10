@@ -1,0 +1,18 @@
+CompileFlags:
+  Add:
+    - --target=xtensa-esp-elf
+    - -Wno-unknown-warning-option
+    - -isystem
+    - C:/Espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/lib/gcc/xtensa-esp-elf/15.2.0/include
+    - -isystem
+    - C:/Espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/lib/gcc/xtensa-esp-elf/15.2.0/include-fixed
+    - -isystem
+    - C:/Espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/xtensa-esp-elf/include
+  Remove:
+    - -mlongcalls
+    - -fno-shrink-wrap
+    - -fstrict-volatile-bitfields
+    - -fno-tree-switch-conversion
+    - -fzero-init-padding-bits=all
+    - -fno-malloc-dce
+    - -mfix-esp32-psram-cache-issue

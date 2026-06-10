@@ -1,0 +1,15 @@
+# Custom partition table for 2MB flash
+# Gives the factory app partition 1.875MB instead of 1MB
+#
+# Total flash: 2MB (0x200000)
+# Layout:
+#   Bootloader : 0x0000  → 0x8000  (32KB, managed by IDF)
+#   Part table : 0x8000  → 0x9000  (4KB,  managed by IDF)
+#   NVS        : 0x9000  → 0xF000  (24KB)
+#   PHY init   : 0xF000  → 0x10000 (4KB)
+#   Factory app: 0x10000 → 0x200000 (1.875MB = 0x1F0000)
+#
+# Name,   Type,  SubType,  Offset,   Size,     Flags
+nvs,      data,  nvs,      0x9000,   0x6000,
+phy_init, data,  phy,      0xf000,   0x1000,
+factory,  app,   factory,  0x10000,  0x1f0000,

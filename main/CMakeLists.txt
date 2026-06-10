@@ -1,0 +1,26 @@
+idf_component_register(
+    SRCS
+        "main.c"
+        "ble_provisioning.c"
+        "nvs_manager.c"
+        "wifi_manager.c"
+        "aws_iot.c"
+        "pzem004t.c"
+        "espnow_master.c"
+    INCLUDE_DIRS "."
+    REQUIRES
+        esp_wifi
+        nvs_flash
+        esp_driver_uart
+        esp_driver_gpio
+        mqtt
+        esp_event
+        esp_netif
+        bt
+    PRIV_REQUIRES
+        cjson
+    EMBED_TXTFILES
+        "certs/client_cert.pem"
+        "certs/client_key.pem"
+        "certs/root_cert.pem"
+)
